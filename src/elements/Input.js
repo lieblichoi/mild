@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import {Text, Grid} from "./index";
 
 const Input = (props) => {
-    const {label, placeholder, _onChange} = props;
+    const {label, placeholder, _onChange, type} = props;
     return (
       <React.Fragment>
         <Grid>
           <Text margin="0px">{label}</Text>
-          <ElementInput placeholder={placeholder} onChange={_onChange} />
+          <ElementInput type={type} placeholder={placeholder} onChange={_onChange} />
         </Grid>
       </React.Fragment>
     );
@@ -18,6 +18,7 @@ const Input = (props) => {
 Input.defaultProps = {
     label: 'Text',
     placeholder: 'Write text...',
+    type: "text",
     _onChange: () => {}
 }
 
